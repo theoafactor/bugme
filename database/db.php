@@ -1,9 +1,9 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "password";
-$dbname = "bugme";
+$__host = "localhost";
+$__user = "root";
+$__password = "password";
+$__dbname = "bugme";
 
 
-$_conn = mysqli_connect($host, $user, $password, $dbname) or die("Could not connect to database ...");
+$__conn = mysqli_connect($__host, $__user, $__password, $__dbname) or die("Could not connect to database ...");
 

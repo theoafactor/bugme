@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['current_user'])){
+	header("location: user");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
