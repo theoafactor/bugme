@@ -75,6 +75,22 @@ CREATE TABLE `movies` (
   `tickets_stock` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+
+-----------------------------------------------------------
+-------- create table for the user image
+
+
+CREATE TABLE IF NOT EXISTS `user_message`(
+`id` INT AUTO_INCREMENT PRIMARY KEY,
+`first_name` VARCHAR(50) NOT NULL,
+`last_name` VARCHAR(50) NOT NULL,
+`email` VARCHAR(50) NOT NULL,
+`phone_number` INT(20) NOT NULL,
+`message` TEXT(5000) NOT NULL
+);
+
+
+
 --
 -- Dumping data for table `movies`
 --
