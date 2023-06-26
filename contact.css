@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto+Condensed:ital@1&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: serif;
+}
+
+body{
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+#section-wrapper{
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-wrap{
+  width:55%;
+  padding:30px 15px;
+  border-radius: 30px;
+  background-color: whitesmoke;
+}
+
+.form-title{
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Cinzel', serif;
+}
+
+.form-fields input,
+.form-fields textarea{
+  border: none;
+  outline:none;
+  background: none;
+  font-size: 18px;
+  padding: 10px;
+  border: 2px solid #f0f0f0;
+  width:100%;
+  background-color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.form-fields textarea{
+  height: 150px;
+  resize: none;
+}
+
+.form-group{
+  width: 46%;
+  float: left;
+  padding: 0px 20px;
+  margin: 14px 12px;
+  border-radius: 25px;
+}
+
+.form-fields .form-group:last-child {
+  width: 96%;
+}
+
+.submit-button{
+  width: 90%;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  color:#fff;
+  text-align: center;
+  background-color: rgb(41, 57, 194);
+  transition: .5s;
+  margin-left: 30px;
+}
+
+.submit-button:hover{
+  background: #0f2027;
+}
+
+
+/* Responsive css */
+
+@media only screen and (max-width: 767px) {
+  .box-wrapper{
+      width: 100%;
+  }
+  .form-wrap{
+      width: 100%;
+      height: inherit;
+      float: none;  
+  }
+  .form-wrap{
+      border-radius: 0px 0px 30px 30px;
+  }
+  .form-group{
+      width: 100%;
+      float: none;
+      margin: 25px 0px;
+  }
+  .form-fields .form-group:last-child, 
+  .submit-button{
+      width: 100%;
+  }
+  .submit-button{
+      margin: 10px 0px;
+  }
+ 
+}
