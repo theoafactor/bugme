@@ -1,5 +1,6 @@
 <?php
-    include("./database/db.php")
+    include("./database/db.php");
+    include("./processes/contact_processes.php")
 ?>
 
 <!DOCTYPE html>
@@ -8,64 +9,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Contact Us Page Design using Html CSS</title>
-    
-    <link rel="stylesheet" href="contact.css">
+    <title>Contact | Page</title>
+    <link rel="stylesheet" href="./css-container/contact.css">
 </head>
 <body>
-    <section id="section-wrapper">
-            
-        <div class="form-wrap">
-            <form action="contact.php" method="POST">
-                <h1 class="form-title">Send us a message</h1>
-                <div class="form-fields">
-                    <div class="form-group">
-                        <input type="text" class="fname" placeholder="First Name" name="First_name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="lname" placeholder="Last Name" name="Last_name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="email" placeholder="Mail" name="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="phone" placeholder="Phone" name="Phone_number">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" id="" placeholder="Write your message"></textarea>
-                    </div>
-                </div>
-                <input type="submit" value="Send Message" name="submit" class="submit-button">
-            </form>
+    <div class="container">
+        <div class="row">
+                <h1>contact us</h1>
         </div>
-    </section>
-</body>
-</html>
-
+        <div class="row">
+                <h4 style="text-align:center">We'd love to hear from you!</h4>
+        </div>
 
 <?php
-
+    
+    // if the user submitted the form
     if(isset($_POST['submit'])){
     require './database/db.php';
-    $getfirst=$_POST['First_name'];
-    $getlast=$_POST['Last_name'];
-    $getemail=$_POST['Email'];
-    $getphone=$_POST['Phone_number'];
+    //getting the input
+    $getfirst=$_POST['first_name'];
+    $getlast=$_POST['last_name'];
+    $getemail=$_POST['email'];
+    $getphone=$_POST['phone_number'];
     $gettext=$_POST['message'];
-
     
-
-    $sql="INSERT INTO `user_message` (`first_name`, `last_name`, `email`, `phone_number`, `message`) VALUES ('$getfirst', '$getlast', '$getemail', '$getphone', '$gettext')";
-    
-    try{
-        $sqlres=mysqli_query($__conn, $sql);
-        echo "message is sent";
+    require('./processes/contact_processes.php');
     }
-    catch(mysqli_sql_exception){
-        echo 'Could Not register user';
-    }
-    }
-
-
-    mysqli_close($__conn);
+    mysqli_close($__conn); 
 ?>
+
+        <form action="" method="post">
+            <div class="row input-container">
+                <div class="col-xs-12">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="styled-input">
+                            <input type="text" required name="first_name"/>
+                            <label>First Name</label> 
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="styled-input" style="float:right;">
+                            <input type="text" required name="last_name"/>
+                            <label>Last name </label> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input">
+                        <input type="text" required name="email"/>
+                        <label>Email</label> 
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input" style="float:right;">
+                        <input type="text" required name="phone_number"/>
+                        <label>Phone Number</label> 
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        <textarea required name="message"></textarea>
+                        <label>Message</label>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <input type="submit" value="Send Message" class="btn-lrg submit-btn" name="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>            
+
+
+<?php ob_flush(); ?>

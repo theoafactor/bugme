@@ -1,0 +1,58 @@
+/* success message style  */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body{
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.success{
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  width: 300px;
+  height: 350px;
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.suceess_img{
+  width: 40px;
+  margin-top: 10px;
+}
+
+.success_header{
+  text-align: left;
+  font-size: 30px;
+}
+
+.suceess_para{
+  font-size: 16px;
+}
+
+#dismiss{
+  background-color: hsl(234, 29%, 20%);
+  color: white;
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+  margin-top: 7px;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#dismiss:hover{
+  background: linear-gradient(to right, #ff5f6d, #ee6c20);
+}
